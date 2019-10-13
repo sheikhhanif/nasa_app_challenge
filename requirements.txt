@@ -1,0 +1,6 @@
+tensorflow
+keras
+flask-restplus
+flask
+flask-swagger
+flasgger

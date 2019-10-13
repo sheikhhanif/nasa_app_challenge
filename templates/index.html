@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+.bg-img .ov {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: .2;
+    background: #1C1D21;
+}
+
+h1 {
+    font-size: 80px;
+}
+.title:after {
+    content:"";
+  	display:block;
+  	height:4px;
+  	width:40px;
+  	background-color: #008080;
+    margin-top: 20px;
+}
+</style>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Back to The 90s</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}" />
+
+    <!-- Owl Carousel -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.css')}}" />
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.css')}}" />
+
+
+	<!-- Magnific Popup -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css')}}" />
+
+	<!-- Font Awesome Icon -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}" />
+
+    <!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/n3.css')}}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/custom.css')}}" />
+
+</head>
+
+<body>
+
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('{{ url_for('static', filename='img/b1.jpg')}}');">
+			<div class="ov"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="index.html">
+							<img class="logo" src="{{ url_for('static', filename='img/logo.png')}}" alt="logo">
+							<img class="logo-alt" src="{{ url_for('static', filename='img/logo.png')}}" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#forecast">Forecast</a></li>
+					<li><a href="#visualization">Visualization</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
+
+					<!-- home content -->
+					<div class="col-md-10 col-md-offset-1">
+						<div class="home-content">
+							<h1 class="white-text">Novus Presents</h1>
+							<h1 class="white-text">'Back To The 90s'</h1>
+							<p class="white-text">
+							</p>
+							<!-- <button class="main-btn" href="#pneumonia">Lets start</button> -->
+						</div>
+					</div>
+					<!-- /home content -->
+
+				</div>
+			</div>
+		</div>
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+	<!-- Why Choose Us -->
+	<div id="forecast" class="section md-padding bg-grey">
+
+		<!-- Container -->
+		<div class="container" >
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- why choose us content -->
+				<div class="col-md-6">
+					<div class="section-header">
+						<h2 class="title">Forecast of Forest Land</h2>
+					</div>
+					<h4>How it works?</h4>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Provide the year  </p>
+					</div>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Click the 'Forecast!' button</p>
+					</div>
+
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Results will be displayed instantly</p>
+					</div>
+				</div>
+				
+				<!-- About slider -->
+				<div class="col-md-6">
+						<div >
+							<h2></h2>
+						</div>
+					<form id="upload-file" method="post" enctype="multipart/form-data">
+						<h4 class = "mar">Please provide the year</h4>
+						<input type="text" class="form-control z-depth-1 tx" name="year" id="imageUpload">
+						<button type="button" class="btn btn-pp btn-lg " id="btn-predict">Forecast!</button>
+					</form>
+					<!--
+					<div>
+						
+						<div>
+							<button type="button" class="btn btn-primary btn-lg " id="btn-predict">Get Year!</button>
+						</div>
+					</div>
+					-->
+					<!-- <div class="loader" style="display:none;"></div> -->
+					
+
+					<div class="feature" id="result">
+					</div>
+
+
+				</div>
+				<!-- /About slider -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Vizzzzzz -->
+
+		<div id="visualization" class="section md-padding bg-grey">
+
+			<!-- Container -->
+			<div class="container" >
+	
+				<!-- Row -->
+				<div class="row">
+	
+					<!-- why choose us content -->
+					<div class="col-md-6">
+						<div class="section-header">
+							<h2 class="title">Visualization of Forest Land</h2>
+						</div>	
+					</div>
+
+					<div class='tableauPlaceholder col-md-6' id='viz1570785752907' style='position: relative'>
+							<noscript>
+							<a href='#'>
+							<img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Vis_15707857355720&#47;Sheet1&#47;1_rss.png' style='border: none' />
+							</a>
+							</noscript>
+							
+							<object class='tableauViz'  style='display:none;'>
+							<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+							<param name='embed_code_version' value='3' /> 
+							<param name='site_root' value='' />
+							<param name='name' value='Vis_15707857355720&#47;Sheet1' />
+							<param name='tabs' value='no' />
+							<param name='toolbar' value='yes' />
+							<param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;Vis_15707857355720&#47;Sheet1&#47;1.png' /> 
+							<param name='animate_transition' value='yes' />
+							<param name='display_static_image' value='yes' />
+							<param name='display_spinner' value='yes' />
+							<param name='display_overlay' value='yes' />
+							<param name='display_count' value='yes' />
+							<param name='filter' value='publish=yes' />
+							</object>
+							</div>               
+							
+							 <script type='text/javascript'>                    var divElement = document.getElementById('viz1570785752907');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+							</script>
+				</div>
+				<!-- /Row -->
+	
+			</div>
+			<!-- /Container -->
+			</div>
+
+
+	<!-- jQuery Plugins -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/jquery.magnific-popup.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script>
+    <script src="{{ url_for('static', filename='js/custom.js') }}" type="text/javascript"></script>
+
+
+</body>
+
+</html>
