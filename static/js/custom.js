@@ -42,10 +42,15 @@ $(document).ready(function () {
             processData: false,
             async: true,
             success: function (data) {
+                let result = JSON.parse(data);
+                let sentence  = '<i class="fa fa-check"></i><p>Appoximate remaining forest land in '+ result.year + ': ' + result.area + '</p>';
+                sentence     += '<i class="fa fa-check"></i><p>Total amount of plantations required per year: '+ result.amount + '</p>';
+                sentence     += '<i class="fa fa-check"></i><p>Total amount of plantations required per year: '+ result.cost + '</p>';
                 // Get and display the result
                 $('.loader').hide();
                 $('#result').fadeIn(600);
-                $('#result').text(' ' + data);
+
+                $('#result').html(' ' + sentence);
                 console.log('Success!');
             },
         });

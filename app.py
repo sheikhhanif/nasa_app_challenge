@@ -41,8 +41,9 @@ def predict(year):
     number_of_trees = per_year_forest*min_tree
     total_cost = math.ceil((number_of_trees*per_tree_cost)/1000000)
 
-    sentence = "Appoximate remaining forest land in " + str(year) + " : " + str(final_pred) + "\n\t\t" + "Total amount of plantations required per year: " + str(per_year_forest) + "\n\t\t\t" + "Total Cost per year" + str(total_cost)
-    return sentence
+    #sentence = "Appoximate remaining forest land in " + str(year) + " : " + str(final_pred) + "\n\t\t" + "Total amount of plantations required per year: " + str(per_year_forest) + "\n\t\t\t" + "Total Cost per year" + str(total_cost)
+    result = {'year': year, 'area': final_pred, 'amount': per_year_forest, 'cost': total_cost}
+    return json.dumps(result)
 
 
 # Create a Flask instance
