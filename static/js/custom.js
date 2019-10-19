@@ -43,7 +43,7 @@ $(document).ready(function () {
             async: true,
             success: function (data) {
                 let result = JSON.parse(data);
-                let sentence  = '<i class="fa fa-check"></i><p>Appoximate remaining forest land in '+ result.year + ' : ' + result.area + ' hectare</p>';
+                let sentence  = '<i class="fa fa-check"></i><p>Appoximate remaining forest land in '+ result.year + ' : ' + result.area + ' mil hectare</p>';
                 sentence     += '<i class="fa fa-check"></i><p>Average burning rate per year : '+ result.amount + ' %</p>';
                 //sentence     += '<i class="fa fa-check"></i><p>Total cost per year: $'+ result.cost + ' million</p>';
                 // Get and display the result

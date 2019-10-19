@@ -35,6 +35,7 @@ def predict(year):
     test = np.array([[year]])
     pred_data = indo_model.predict(test)
     #final_pred = str(pred_data[0])
+    pred_data  = pred_data/1000000
     final_pred = round(pred_data[0],2)
     #reduce = indo.iloc[0,3] - final_pred
     #years_left = year - 2019
