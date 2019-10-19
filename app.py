@@ -16,12 +16,16 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 
-dataset = pd.read_csv('population.csv')
-data = dataset.rename(columns = {"Area":"country", "Population (Unit 1000 person)":"population","Forest Land (Unit 1000 ha)":"forestland","Forest CO2 emission rate (Tonnes C/ha)":"CO2emission"})
-indo = data.iloc[54:81]
+data = pd.read_csv('nasadata.csv')
+data = data.rename(columns = {"Area":"country", "Population (Unit 1000 person)":"population","Forest Land (Unit 1000 ha)":"forestland","Forest CO2 emission rate (Tonnes C/ha)":"CO2emission","Burning Rate":"burn"})
+#indo = data.iloc[54:81]
+data['forestland'] = data['forestland'] * 1000
+data['burning_rate'] = (data['burn'] * 100) / data['forestland']
+average_rate = data['burning_rate'].mean()
+average_rate = round(average_rate,2)
 features = ['Year']
-x = indo[features]
-y = indo.forestland
+x = data[features]
+y = data.forestland
 indo_model = LinearRegression()
 indo_model.fit(x,y)
 
@@ -31,18 +35,18 @@ def predict(year):
     test = np.array([[year]])
     pred_data = indo_model.predict(test)
     #final_pred = str(pred_data[0])
-    final_pred = math.ceil((pred_data[0]))
-    reduce = indo.iloc[0,3] - final_pred
-    years_left = year - 2019
-    per_year_forest = np.around((reduce/years_left), decimals= 2)
-    year_rate = np.around(((per_year_forest*100)/indo.iloc[26,3]), decimals=2)
-    per_tree_cost = 1.5
-    min_tree = 1000
-    number_of_trees = per_year_forest*min_tree
-    total_cost = math.ceil((number_of_trees*per_tree_cost)/1000000)
+    final_pred = round(pred_data[0],2)
+    #reduce = indo.iloc[0,3] - final_pred
+    #years_left = year - 2019
+    #per_year_forest = np.around((reduce/years_left), decimals= 2)
+    #year_rate = np.around(((per_year_forest*100)/indo.iloc[26,3]), decimals=2)
+    #per_tree_cost = 1.5
+    #min_tree = 1000
+    #number_of_trees = per_year_forest*min_tree
+    #total_cost = math.ceil((number_of_trees*per_tree_cost)/1000000)
 
     #sentence = "Appoximate remaining forest land in " + str(year) + " : " + str(final_pred) + "\n\t\t" + "Total amount of plantations required per year: " + str(per_year_forest) + "\n\t\t\t" + "Total Cost per year" + str(total_cost)
-    result = {'year': year, 'area': final_pred, 'amount': per_year_forest, 'cost': total_cost}
+    result = {'year': year, 'area': final_pred, 'amount': average_rate}
     return json.dumps(result)
 
 
