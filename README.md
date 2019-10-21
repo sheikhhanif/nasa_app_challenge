@@ -23,7 +23,7 @@ Novus is a project that aims to reduce climate change through the plantation and
 ### Keep track of your trees
 ![track](demo/track.png)
 
-## Our Achievements 
+## We reward you!!!
 ![achieve](demo/achievement.png)
 
 
